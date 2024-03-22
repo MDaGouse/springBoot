@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Report template for Excel report -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="UserReport"
+              language="java"
+              pageWidth="595" 
+              pageHeight="842" 
+              orientation="Landscape" 
+              columnWidth="555" 
+              leftMargin="20" 
+              rightMargin="20" 
+              topMargin="20" 
+              bottomMargin="20"
+              uuid="a26d6d09-943d-4c7a-9f16-8d81fa77a2e5">
+    <queryString>
+        <![CDATA[SELECT * FROM user_data]]> <!-- Modify the SQL query as per your database schema -->
+    </queryString>
+    <field name="sno" class="java.lang.Integer"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="mobile" class="java.lang.Double"/>
+    <columnHeader>
+        <band height="30">
+            <staticText>
+                <reportElement x="0" y="0" width="64" height="30" uuid="d99e8555-2c4e-40f1-a0a4-d3b4c7b0a517"/>
+                <text><![CDATA[Sno]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="64" y="0" width="64" height="30" uuid="f4bb9c8c-c8d5-4c60-b0aa-b2a5a4d42d35"/>
+                <text><![CDATA[Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="128" y="0" width="64" height="30" uuid="4a5f7fa4-1a68-442e-bf48-33d80c9787bc"/>
+                <text><![CDATA[Mobile]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="30">
+            <textField>
+                <reportElement x="0" y="0" width="64" height="30" uuid="d388d978-342c-4976-b0f1-bcd438840bb8"/>
+                <textFieldExpression><![CDATA[$F{sno}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="64" y="0" width="64" height="30" uuid="30cc2a58-19fc-4da7-b4e3-c15f42ee7794"/>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="128" y="0" width="64" height="30" uuid="65c27a7f-38b0-4fbf-a463-78e31927fd32"/>
+                <textFieldExpression><![CDATA[$F{mobile}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
